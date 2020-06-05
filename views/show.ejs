@@ -1,0 +1,53 @@
+<%- include('header'); %>
+
+<div class = "container">
+  <div class = "row">
+     <div class = "col-md-3">
+        <p class = "lead">YelpCamp</p>
+         <div class = "list-group">
+           <li class = "list-group-item active">Info 1</li>
+           <li class = "list-group-item">Info 1</li>
+           <li class = "list-group-item">Info 1</li>
+         </div>
+     </div>
+     <div class = "col-md-7">
+       <div class = "thumbnail" style="padding : 0">
+         <img style ="width:100%;height:400px" class = "img-responsive" src = "<%=camps.image%>">
+         <div style = "padding:9px"class = "caption-full">
+         <h3 class = "pull-right">$90</h3>
+         <h4><a><%=camps.name%></a></h4>
+         <div class = "description">
+            <p><h4><%=camps.description%></h4></p>
+
+         </div>
+         </div>
+
+         </div>
+          <div class = "well">
+           <div class = "text-right">
+              
+<a class = "btn btn-success"  href = "/campground/<%=camps._id%>/comment/new">Add Comment</a>
+
+           </div>
+           <%camps.comment.forEach(function(camp){%>
+           <div class = "row">
+             <div class = "col-md-12">
+                <%= camp.author %>
+                <span class = "pull-right">10 days ago</span>
+                <p> - <%=camp.text%></p>
+             </div>
+           </div>
+	
+          <%})%>
+       </div>
+     </div>
+  </div>
+</div>
+
+<H1><%= camps.name %></H1> 
+
+
+
+
+
+<%- include('footer'); %>
